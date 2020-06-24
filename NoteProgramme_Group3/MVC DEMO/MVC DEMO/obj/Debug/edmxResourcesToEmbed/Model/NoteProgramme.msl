@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WindowProgrammingSQLModelStoreContainer" CdmEntityContainer="WindowProgrammingSQLEntities">
+    <EntitySetMapping Name="List_Of_ImportantNote">
+      <EntityTypeMapping TypeName="WindowProgrammingSQLModel.List_Of_ImportantNote">
+        <MappingFragment StoreEntitySet="List_Of_ImportantNote">
+          <ScalarProperty Name="NoteOrder" ColumnName="NoteOrder" />
+          <ScalarProperty Name="NoteDrawPictureName" ColumnName="NoteDrawPictureName" />
+          <ScalarProperty Name="NotePictureName" ColumnName="NotePictureName" />
+          <ScalarProperty Name="NoteColor" ColumnName="NoteColor" />
+          <ScalarProperty Name="FontSize" ColumnName="FontSize" />
+          <ScalarProperty Name="FontFamily" ColumnName="FontFamily" />
+          <ScalarProperty Name="ImportantTag" ColumnName="ImportantTag" />
+          <ScalarProperty Name="ImportantContent" ColumnName="ImportantContent" />
+          <ScalarProperty Name="ImportantHeader" ColumnName="ImportantHeader" />
+          <ScalarProperty Name="ImportantOrder" ColumnName="ImportantOrder" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="List_Of_Notes">
+      <EntityTypeMapping TypeName="WindowProgrammingSQLModel.List_Of_Notes">
+        <MappingFragment StoreEntitySet="List_Of_Notes">
+          <ScalarProperty Name="NoteDrawPictureName" ColumnName="NoteDrawPictureName" />
+          <ScalarProperty Name="NotePictureName" ColumnName="NotePictureName" />
+          <ScalarProperty Name="NoteColor" ColumnName="NoteColor" />
+          <ScalarProperty Name="FontSize" ColumnName="FontSize" />
+          <ScalarProperty Name="FontFamily" ColumnName="FontFamily" />
+          <ScalarProperty Name="NoteTag" ColumnName="NoteTag" />
+          <ScalarProperty Name="NotesContent" ColumnName="NotesContent" />
+          <ScalarProperty Name="NotesHeader" ColumnName="NotesHeader" />
+          <ScalarProperty Name="NotesOrder" ColumnName="NotesOrder" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="List_Of_TrashBin">
+      <EntityTypeMapping TypeName="WindowProgrammingSQLModel.List_Of_TrashBin">
+        <MappingFragment StoreEntitySet="List_Of_TrashBin">
+          <ScalarProperty Name="TrashDrawPictureName" ColumnName="TrashDrawPictureName" />
+          <ScalarProperty Name="TrashPictureName" ColumnName="TrashPictureName" />
+          <ScalarProperty Name="TrashColor" ColumnName="TrashColor" />
+          <ScalarProperty Name="FontSize" ColumnName="FontSize" />
+          <ScalarProperty Name="FontFamily" ColumnName="FontFamily" />
+          <ScalarProperty Name="TrashTag" ColumnName="TrashTag" />
+          <ScalarProperty Name="TrashContent" ColumnName="TrashContent" />
+          <ScalarProperty Name="TrashHeader" ColumnName="TrashHeader" />
+          <ScalarProperty Name="TrashOrder" ColumnName="TrashOrder" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="WindowProgrammingSQLModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Pass_word" ColumnName="Pass_word" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

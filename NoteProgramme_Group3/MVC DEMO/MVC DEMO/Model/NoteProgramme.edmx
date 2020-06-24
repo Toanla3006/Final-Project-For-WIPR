@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="WindowProgrammingSQLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="List_Of_ImportantNote">
+          <Key>
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="ImportantOrder" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ImportantOrder" Type="int" Nullable="false" />
+          <Property Name="ImportantHeader" Type="text" />
+          <Property Name="ImportantContent" Type="text" />
+          <Property Name="ImportantTag" Type="varchar" MaxLength="30" />
+          <Property Name="FontFamily" Type="varchar" MaxLength="30" />
+          <Property Name="FontSize" Type="int" />
+          <Property Name="NoteColor" Type="varchar" MaxLength="30" />
+          <Property Name="NotePictureName" Type="nvarchar" MaxLength="70" />
+          <Property Name="NoteDrawPictureName" Type="nvarchar" MaxLength="70" />
+          <Property Name="NoteOrder" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="List_Of_Notes">
+          <Key>
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="NotesOrder" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="NotesOrder" Type="int" Nullable="false" />
+          <Property Name="NotesHeader" Type="text" />
+          <Property Name="NotesContent" Type="text" />
+          <Property Name="NoteTag" Type="varchar" MaxLength="30" />
+          <Property Name="FontFamily" Type="varchar" MaxLength="30" />
+          <Property Name="FontSize" Type="int" />
+          <Property Name="NoteColor" Type="varchar" MaxLength="30" />
+          <Property Name="NotePictureName" Type="nvarchar" MaxLength="70" />
+          <Property Name="NoteDrawPictureName" Type="nvarchar" MaxLength="70" />
+        </EntityType>
+        <EntityType Name="List_Of_TrashBin">
+          <Key>
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="TrashOrder" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TrashOrder" Type="int" Nullable="false" />
+          <Property Name="TrashHeader" Type="text" />
+          <Property Name="TrashContent" Type="text" />
+          <Property Name="TrashTag" Type="varchar" MaxLength="30" />
+          <Property Name="FontFamily" Type="varchar" MaxLength="30" />
+          <Property Name="FontSize" Type="int" />
+          <Property Name="TrashColor" Type="varchar" MaxLength="30" />
+          <Property Name="TrashPictureName" Type="nvarchar" MaxLength="70" />
+          <Property Name="TrashDrawPictureName" Type="nvarchar" MaxLength="70" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Pass_word" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__List_Of_I__Usern__5CD6CB2B">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="List_Of_ImportantNote" Type="Self.List_Of_ImportantNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="List_Of_ImportantNote">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__List_Of_N__Notes__4F7CD00D">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="List_Of_Notes" Type="Self.List_Of_Notes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="List_Of_Notes">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__List_Of_T__Usern__52593CB8">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="List_Of_TrashBin" Type="Self.List_Of_TrashBin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="List_Of_TrashBin">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="WindowProgrammingSQLModelStoreContainer">
+          <EntitySet Name="List_Of_ImportantNote" EntityType="Self.List_Of_ImportantNote" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="List_Of_Notes" EntityType="Self.List_Of_Notes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="List_Of_TrashBin" EntityType="Self.List_Of_TrashBin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__List_Of_I__Usern__5CD6CB2B" Association="Self.FK__List_Of_I__Usern__5CD6CB2B">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="List_Of_ImportantNote" EntitySet="List_Of_ImportantNote" />
+          </AssociationSet>
+          <AssociationSet Name="FK__List_Of_N__Notes__4F7CD00D" Association="Self.FK__List_Of_N__Notes__4F7CD00D">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="List_Of_Notes" EntitySet="List_Of_Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__List_Of_T__Usern__52593CB8" Association="Self.FK__List_Of_T__Usern__52593CB8">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="List_Of_TrashBin" EntitySet="List_Of_TrashBin" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="WindowProgrammingSQLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="WindowProgrammingSQLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="List_Of_ImportantNote" EntityType="WindowProgrammingSQLModel.List_Of_ImportantNote" />
+          <EntitySet Name="List_Of_Notes" EntityType="WindowProgrammingSQLModel.List_Of_Notes" />
+          <EntitySet Name="List_Of_TrashBin" EntityType="WindowProgrammingSQLModel.List_Of_TrashBin" />
+          <EntitySet Name="Users" EntityType="WindowProgrammingSQLModel.User" />
+          <AssociationSet Name="FK__List_Of_I__Usern__5CD6CB2B" Association="WindowProgrammingSQLModel.FK__List_Of_I__Usern__5CD6CB2B">
+            <End Role="User" EntitySet="Users" />
+            <End Role="List_Of_ImportantNote" EntitySet="List_Of_ImportantNote" />
+          </AssociationSet>
+          <AssociationSet Name="FK__List_Of_N__Notes__4F7CD00D" Association="WindowProgrammingSQLModel.FK__List_Of_N__Notes__4F7CD00D">
+            <End Role="User" EntitySet="Users" />
+            <End Role="List_Of_Notes" EntitySet="List_Of_Notes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__List_Of_T__Usern__52593CB8" Association="WindowProgrammingSQLModel.FK__List_Of_T__Usern__52593CB8">
+            <End Role="User" EntitySet="Users" />
+            <End Role="List_Of_TrashBin" EntitySet="List_Of_TrashBin" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="List_Of_ImportantNote">
+          <Key>
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="ImportantOrder" />
+          </Key>
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ImportantOrder" Type="Int32" Nullable="false" />
+          <Property Name="ImportantHeader" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ImportantContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ImportantTag" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FontFamily" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FontSize" Type="Int32" />
+          <Property Name="NoteColor" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NotePictureName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="NoteDrawPictureName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="NoteOrder" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="WindowProgrammingSQLModel.FK__List_Of_I__Usern__5CD6CB2B" FromRole="List_Of_ImportantNote" ToRole="User" />
+        </EntityType>
+        <EntityType Name="List_Of_Notes">
+          <Key>
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="NotesOrder" />
+          </Key>
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NotesOrder" Type="Int32" Nullable="false" />
+          <Property Name="NotesHeader" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NotesContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="NoteTag" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FontFamily" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FontSize" Type="Int32" />
+          <Property Name="NoteColor" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NotePictureName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="NoteDrawPictureName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="WindowProgrammingSQLModel.FK__List_Of_N__Notes__4F7CD00D" FromRole="List_Of_Notes" ToRole="User" />
+        </EntityType>
+        <EntityType Name="List_Of_TrashBin">
+          <Key>
+            <PropertyRef Name="Username" />
+            <PropertyRef Name="TrashOrder" />
+          </Key>
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TrashOrder" Type="Int32" Nullable="false" />
+          <Property Name="TrashHeader" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TrashContent" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="TrashTag" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FontFamily" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FontSize" Type="Int32" />
+          <Property Name="TrashColor" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="TrashPictureName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="TrashDrawPictureName" Type="String" MaxLength="70" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="User" Relationship="WindowProgrammingSQLModel.FK__List_Of_T__Usern__52593CB8" FromRole="List_Of_TrashBin" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Username" />
+          </Key>
+          <Property Name="Username" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Pass_word" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="List_Of_ImportantNote" Relationship="WindowProgrammingSQLModel.FK__List_Of_I__Usern__5CD6CB2B" FromRole="User" ToRole="List_Of_ImportantNote" />
+          <NavigationProperty Name="List_Of_Notes" Relationship="WindowProgrammingSQLModel.FK__List_Of_N__Notes__4F7CD00D" FromRole="User" ToRole="List_Of_Notes" />
+          <NavigationProperty Name="List_Of_TrashBin" Relationship="WindowProgrammingSQLModel.FK__List_Of_T__Usern__52593CB8" FromRole="User" ToRole="List_Of_TrashBin" />
+        </EntityType>
+        <Association Name="FK__List_Of_I__Usern__5CD6CB2B">
+          <End Type="WindowProgrammingSQLModel.User" Role="User" Multiplicity="1" />
+          <End Type="WindowProgrammingSQLModel.List_Of_ImportantNote" Role="List_Of_ImportantNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="List_Of_ImportantNote">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__List_Of_N__Notes__4F7CD00D">
+          <End Type="WindowProgrammingSQLModel.User" Role="User" Multiplicity="1" />
+          <End Type="WindowProgrammingSQLModel.List_Of_Notes" Role="List_Of_Notes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="List_Of_Notes">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__List_Of_T__Usern__52593CB8">
+          <End Type="WindowProgrammingSQLModel.User" Role="User" Multiplicity="1" />
+          <End Type="WindowProgrammingSQLModel.List_Of_TrashBin" Role="List_Of_TrashBin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Username" />
+            </Principal>
+            <Dependent Role="List_Of_TrashBin">
+              <PropertyRef Name="Username" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="WindowProgrammingSQLModelStoreContainer" CdmEntityContainer="WindowProgrammingSQLEntities">
+          <EntitySetMapping Name="List_Of_ImportantNote">
+            <EntityTypeMapping TypeName="WindowProgrammingSQLModel.List_Of_ImportantNote">
+              <MappingFragment StoreEntitySet="List_Of_ImportantNote">
+                <ScalarProperty Name="NoteOrder" ColumnName="NoteOrder" />
+                <ScalarProperty Name="NoteDrawPictureName" ColumnName="NoteDrawPictureName" />
+                <ScalarProperty Name="NotePictureName" ColumnName="NotePictureName" />
+                <ScalarProperty Name="NoteColor" ColumnName="NoteColor" />
+                <ScalarProperty Name="FontSize" ColumnName="FontSize" />
+                <ScalarProperty Name="FontFamily" ColumnName="FontFamily" />
+                <ScalarProperty Name="ImportantTag" ColumnName="ImportantTag" />
+                <ScalarProperty Name="ImportantContent" ColumnName="ImportantContent" />
+                <ScalarProperty Name="ImportantHeader" ColumnName="ImportantHeader" />
+                <ScalarProperty Name="ImportantOrder" ColumnName="ImportantOrder" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="List_Of_Notes">
+            <EntityTypeMapping TypeName="WindowProgrammingSQLModel.List_Of_Notes">
+              <MappingFragment StoreEntitySet="List_Of_Notes">
+                <ScalarProperty Name="NoteDrawPictureName" ColumnName="NoteDrawPictureName" />
+                <ScalarProperty Name="NotePictureName" ColumnName="NotePictureName" />
+                <ScalarProperty Name="NoteColor" ColumnName="NoteColor" />
+                <ScalarProperty Name="FontSize" ColumnName="FontSize" />
+                <ScalarProperty Name="FontFamily" ColumnName="FontFamily" />
+                <ScalarProperty Name="NoteTag" ColumnName="NoteTag" />
+                <ScalarProperty Name="NotesContent" ColumnName="NotesContent" />
+                <ScalarProperty Name="NotesHeader" ColumnName="NotesHeader" />
+                <ScalarProperty Name="NotesOrder" ColumnName="NotesOrder" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="List_Of_TrashBin">
+            <EntityTypeMapping TypeName="WindowProgrammingSQLModel.List_Of_TrashBin">
+              <MappingFragment StoreEntitySet="List_Of_TrashBin">
+                <ScalarProperty Name="TrashDrawPictureName" ColumnName="TrashDrawPictureName" />
+                <ScalarProperty Name="TrashPictureName" ColumnName="TrashPictureName" />
+                <ScalarProperty Name="TrashColor" ColumnName="TrashColor" />
+                <ScalarProperty Name="FontSize" ColumnName="FontSize" />
+                <ScalarProperty Name="FontFamily" ColumnName="FontFamily" />
+                <ScalarProperty Name="TrashTag" ColumnName="TrashTag" />
+                <ScalarProperty Name="TrashContent" ColumnName="TrashContent" />
+                <ScalarProperty Name="TrashHeader" ColumnName="TrashHeader" />
+                <ScalarProperty Name="TrashOrder" ColumnName="TrashOrder" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="WindowProgrammingSQLModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Pass_word" ColumnName="Pass_word" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

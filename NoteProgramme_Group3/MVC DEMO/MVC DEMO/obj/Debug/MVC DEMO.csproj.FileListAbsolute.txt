@@ -1,0 +1,18 @@
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\bin\Debug\MVC DEMO.exe.config
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\bin\Debug\MVC DEMO.exe
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\bin\Debug\MVC DEMO.pdb
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\obj\Debug\MVC DEMO.csprojResolveAssemblyReference.cache
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\obj\Debug\MVC_DEMO.Properties.Resources.resources
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\obj\Debug\MVC DEMO.csproj.GenerateResource.Cache
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\obj\Debug\MVC DEMO.exe
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\obj\Debug\MVC DEMO.pdb
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\bin\Debug\EntityFramework.dll
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\bin\Debug\EntityFramework.xml
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\obj\Debug\MVC_DEMO.View.TrashBinPage.resources
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\obj\Debug\MVC_DEMO.View.NotePage.resources
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\obj\Debug\MVC_DEMO.View.Set_Alarm.resources
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\obj\Debug\MVC_DEMO.View.Annoucement.resources
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\obj\Debug\MVC_DEMO.View.Email.resources
+C:\Users\Tin\Desktop\Winform\MVC DEMO\MVC DEMO\obj\Debug\MVC_DEMO.View.Form1.resources
